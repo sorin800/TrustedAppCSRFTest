@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>LogIn</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Custom styles for this template -->
+<link th:href="@{/assets/css/signin.css}" rel="stylesheet">
+</head>
+<body class="text-center">
+	<form class="form-signin" action="/send" method="GET">
+		<img class="img-fluid"
+			src="/money-bag.png" alt=""
+			width="72" height="72">
+		<h1 class="h3 mb-3 font-weight-normal">Here You Can Send Money</h1>
+		<h3 class="currentBalance" th:text="'Your current balance is: ' + ${money}"></h3>
+		<label for="email" class="sr-only">Email address</label> <input
+			type="text" id="email" class="form-control"
+			placeholder="Email address" required autofocus> <label
+			for="money" class="sr-only">Amount of money</label> <input
+			type="text" id="money"
+			class="form-control" placeholder="Amount of money to be sent" required>
+		<button class="btn btn-lg btn-primary btn-block" type="button">Send Money</button>
+		<p class="mt-5 mb-3 text-muted">
+			<a th:href="@{/logout}">LOGOUT</a>
+		</p>
+		<div id = "response"></div>	
+	</form>
+	
+	<script src="js/ajaxPost.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
